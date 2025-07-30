@@ -14,46 +14,38 @@
 - ✅ 의존성 설치: `npm install` 완료
 - ✅ 빌드 테스트: `npm run build` 성공 (main.js 생성)
 
-### 3. 개발용 플러그인 설치 (부분 완료)
+### 3. 개발용 플러그인 설치 완료
 - ✅ 개발용 디렉토리 생성: `/d/custom/obsvault/.obsidian/plugins/obsidian-custom-frames-dev/`
 - ✅ 빌드 파일 복사: `main.js`, `manifest.json`, `styles.css`
-- ⚠️ **미완료**: manifest.json ID/이름 수정 (편집기 오류로 중단)
+- ✅ **완료**: manifest.json ID/이름 수정 완료
+  - ID: `"obsidian-custom-frames"` → `"obsidian-custom-frames-dev"`
+  - 이름: `"Custom Frames"` → `"Custom Frames (Dev)"`
 
-## 🔧 현재 해결해야 할 문제
+## ✅ 개발 환경 설정 완료!
 
-### 편집기 오류로 미완료된 작업
-개발용 플러그인의 `manifest.json` 파일에서 다음 수정이 필요:
+모든 기본 설정이 완료되었습니다. 이제 기능 개발을 시작할 수 있습니다.
 
-```bash
-# 현재 위치: /d/custom/obsidian-plugin-dev/ObsidianCustomFrames
-
-# 1. 개발용 manifest.json 파일 수정 (수동으로 편집 권장)
-# 파일 위치: /d/custom/obsvault/.obsidian/plugins/obsidian-custom-frames-dev/manifest.json
-# 
-# 다음 내용을 수정:
-# - "id": "obsidian-custom-frames" → "obsidian-custom-frames-dev" 
-# - "name": "Custom Frames" → "Custom Frames (Dev)"
-
-# 또는 명령어로 (bash 편집기 문제 해결 후):
-sed -i 's/"obsidian-custom-frames"/"obsidian-custom-frames-dev"/' "/d/custom/obsvault/.obsidian/plugins/obsidian-custom-frames-dev/manifest.json"
-sed -i 's/"Custom Frames"/"Custom Frames (Dev)"/' "/d/custom/obsvault/.obsidian/plugins/obsidian-custom-frames-dev/manifest.json"
-```
+### 📁 프로젝트 위치 변경됨
+- **이전**: `/d/custom/obsidian-plugin-dev/ObsidianCustomFrames`
+- **현재**: `/d/custom/obsvault/ObsidianCustomFrames` (워크스페이스 내)
+- **장점**: IDE에서 직접 파일 수정 가능
 
 ## 🚀 다음 단계 (해야 할 일)
 
 ### 1. 즉시 해야 할 작업
-1. **manifest.json 수정 완료** (위 내용 참조)
-2. **Obsidian에서 개발 플러그인 활성화**
+1. **Obsidian에서 개발 플러그인 활성화**
    - Obsidian 재시작
    - Settings > Community plugins에서 "Custom Frames (Dev)" 활성화
-3. **기본 동작 테스트**
+2. **기본 동작 테스트**
+3. **원하는 기능 정의 및 개발 시작**
 
 ### 2. 개발 워크플로우 설정
 ```bash
+# 현재 위치: /d/custom/obsvault/ObsidianCustomFrames
+
 # 개발 모드 실행 (파일 변경 감지)
 npm run dev
 
-# 변경사항을 vault에 자동 복사하는 스크립트 생성 (선택사항)
 # 또는 수동으로 빌드 후 복사:
 npm run build
 cp main.js manifest.json styles.css "/d/custom/obsvault/.obsidian/plugins/obsidian-custom-frames-dev/"
@@ -127,15 +119,15 @@ git merge upstream/master
 - **Node.js**: v22.17.0
 - **npm**: v10.9.2
 - **GitHub CLI**: v2.74.2
-- **개발 디렉토리**: `/d/custom/obsidian-plugin-dev/ObsidianCustomFrames`
+- **개발 디렉토리**: `/d/custom/obsvault/ObsidianCustomFrames`
 - **Vault 경로**: `/d/custom/obsvault`
 
 ## 🎯 다음 대화에서 할 일
 
-1. manifest.json 수정 완료 확인
-2. 개발 플러그인 활성화 확인
-3. 추가하고 싶은 기능 논의
-4. 구체적인 구현 계획 수립
+1. 개발 플러그인 활성화 확인
+2. 추가하고 싶은 기능 논의
+3. 구체적인 구현 계획 수립
+4. 코드 수정 및 테스트
 
 ## ⚠️ 알려진 문제
 
